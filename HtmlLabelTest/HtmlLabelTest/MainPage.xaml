@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HtmlLabelTest"
+             x:Class="HtmlLabelTest.MainPage"
+             xmlns:html="clr-namespace:HtmlLabel;assembly=HtmlLabel">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="-------------" />
+            <html:HtmlLabel x:Name="htmlLabel" Margin="50" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
