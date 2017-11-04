@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlLabelTest.UWP", "HtmlLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlLabelTest.iOS", "HtmlLabelTest\HtmlLabelTest.iOS\HtmlLabelTest.iOS.csproj", "{EC85C186-4817-4AA4-9654-B524F6D24679}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestApp", "TestApp", "{065A83DD-BB01-4620-8F62-916218DE14EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26BADC87-B939-4C40-9D90-7D4A7B3BB69A}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -304,6 +312,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{066C7CAB-9EA9-4990-BABD-E8C05CB6B180} = {065A83DD-BB01-4620-8F62-916218DE14EF}
+		{8BB32801-8DD4-436E-8FFB-F0C76FC89A9E} = {065A83DD-BB01-4620-8F62-916218DE14EF}
+		{3F6E8F1D-9F19-4818-B290-878F2CBB17D2} = {065A83DD-BB01-4620-8F62-916218DE14EF}
+		{EC85C186-4817-4AA4-9654-B524F6D24679} = {065A83DD-BB01-4620-8F62-916218DE14EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A824682-AE53-48FB-8408-1E43ED2FE244}
