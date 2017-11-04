@@ -83,25 +83,41 @@ namespace HtmlLabel
                 var parts = styleEntry.ToLower().Split("=".ToCharArray());
                 if (parts[0] == "background-color")
                 {
-                    styleCont.BackgroundColor = readHexColor(parts[1]);
+                    styleCont.BackgroundColor = ReadHexColor(parts[1]);
                 }
                 else if (parts[0] == "color")
                 {
-                    styleCont.ForegroundColor = readHexColor(parts[1]);
+                    styleCont.ForegroundColor = ReadHexColor(parts[1]);
                 }
                 else if (parts[0] == "font-weight")
                 {
-                    if (parts[1] =="bold")
+                    if (parts[1] == "bold")
                     {
                         styleCont.FontAttributes |= FontAttributes.Bold;
+                    }
+                    if (parts[1] == "normal")
+                    {
+                        styleCont.FontAttributes &= ~FontAttributes.Bold;
+                    }
+                }
+                else if (parts[0] == "font-style")
+                {
+                    if (parts[1] == "italic")
+                    {
+                        styleCont.FontAttributes |= FontAttributes.Bold;
+                    }
+                    if (parts[1] == "normal")
+                    {
+                        styleCont.FontAttributes &= ~FontAttributes.Bold;
                     }
                 }
             }
         }
 
-        private static Color readHexColor(string v)
+        private static Color ReadHexColor(string strColor)
         {
-            throw new NotImplementedException();
+            strColor = strColor.Trim('#');
+            return Color.FromHex(strColor);
         }
 
         private class StyleContainer
