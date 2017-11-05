@@ -6,20 +6,31 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xamarin.Forms;
 
-namespace HtmlLabel
+namespace MWX.XamForms.Controls
 {
     public class HtmlHelper
     {
-
         public static FormattedString Html2LabelSpans(string html, bool ignoreNewLines = true)
         {
             FormattedString fstring = new FormattedString();
-            var xml = $@"<html>{html}</html>";
+            try
+            {
+                var xml = $@"<html>{html}</html>";
 
-            XElement root = XElement.Parse(xml);
+                XElement root = XElement.Parse(xml);
 
-            ProcessNodes(fstring, root, new StyleContainer(), ignoreNewLines);
+                ProcessNodes(fstring, root, new StyleContainer(), ignoreNewLines);
 
+            }
+            catch (Exception ex)
+            {
+                fstring.Spans.Add(new Span
+                {
+                    Text = $"Error: {ex.Message}",
+                    ForegroundColor = Color.Red,
+                    FontAttributes = FontAttributes.Bold
+                });
+            }
             return fstring;
         }
 
@@ -80,7 +91,7 @@ namespace HtmlLabel
             var styles = styleStr.Split(";".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             foreach (var styleEntry in styles)
             {
-                var parts = styleEntry.ToLower().Split("=".ToCharArray());
+                var parts = styleEntry.ToLower().Split(":".ToCharArray());
                 if (parts[0] == "background-color")
                 {
                     styleCont.BackgroundColor = ReadHexColor(parts[1]);
@@ -111,6 +122,14 @@ namespace HtmlLabel
                         styleCont.FontAttributes &= ~FontAttributes.Bold;
                     }
                 }
+                else if (parts[0] == "font-family")
+                {
+                    styleCont.FontFamily = parts[1];
+                }
+                else if (parts[0] == "font-size")
+                {
+                    styleCont.FontSize = double.Parse(parts[1].Trim("ptpxem".ToCharArray()));
+                }
             }
         }
 
@@ -123,7 +142,7 @@ namespace HtmlLabel
         private class StyleContainer
         {
             public Color BackgroundColor { get; set; }
-            public Font Font { get; set; }
+            //public Font Font { get; set; }
             public Color ForegroundColor { get; set; }
             public FontAttributes FontAttributes { get; set; }
             public string FontFamily { get; set; }

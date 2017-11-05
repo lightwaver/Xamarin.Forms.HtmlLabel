@@ -8,8 +8,8 @@
     <ProjectGuid>{0C44209A-41B6-4BD7-8690-110CC2FAF286}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HtmlLabel</RootNamespace>
-    <AssemblyName>HtmlLabel</AssemblyName>
+    <RootNamespace>MWX.XamForms.Controls</RootNamespace>
+    <AssemblyName>MWX.XamForms.HtmlLabel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

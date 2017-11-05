@@ -3,12 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HtmlLabelTest"
              x:Class="HtmlLabelTest.MainPage"
-             xmlns:html="clr-namespace:HtmlLabel;assembly=HtmlLabel">
+             xmlns:html="clr-namespace:MWX.XamForms.Controls;assembly=MWX.XamForms.HtmlLabel">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="-------------" />
-            <html:HtmlLabel x:Name="htmlLabel" Margin="50" />
-        </StackLayout>
-
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="HtmlText-Input" Grid.Row="0" FontSize="Large" VerticalTextAlignment="End" />
+            <Frame Grid.Row="1" OutlineColor="gray" Padding="10" Margin="0">
+                <Editor x:Name="htmlInput" />
+            </Frame>
+            <Label Text="HtmlLabel-Output" Grid.Row="2" FontSize="Large" VerticalTextAlignment="End"  />
+            <Frame Grid.Row="3" OutlineColor="gray" Padding="10" Margin="0">
+                <html:HtmlLabel x:Name="htmlLabel" HtmlText="{Binding Text, Source={x:Reference htmlInput}}" />
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

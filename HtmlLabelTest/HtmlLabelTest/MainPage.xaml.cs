@@ -12,13 +12,15 @@ namespace HtmlLabelTest
         public MainPage()
         {
             InitializeComponent();
-            htmlLabel.HtmlText = @"
-<span style='font-weight:bold'>aaa</span>
+            htmlInput.Text = @"<span style='font-weight:bold;font-size:32'>this is a HTML-Sample</span><br/>
+with
 <b> bold text </b> 
-bbb 
-<i>italic</i>
+and 
+<i>italic text</i>
+<br/>some newlines <br/>
+<b>bold <i>italic text </i></b>
 <br/>
-<b> bold <i>italic</i> text </b> 
+<span style='color:#00AA00;font-weight:bold;background-color:#ff0000'>green Text on red Background (except on UWP)</span><br/>
 ";
         }
     }
