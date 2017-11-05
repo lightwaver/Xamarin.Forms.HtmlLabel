@@ -35,7 +35,7 @@ and then use it like a normal Label.
 ```
 
 ##Screenshots
-![Android TestApp](images/TestAppDroid.png "Android TestApp")
+![Android TestApp](Images/TestAppDroid.png "Android TestApp")
 ![UWP TestApp](Images/TestAppUWP.png "UWP TestApp")
 
 ## Supported Html-Tags
