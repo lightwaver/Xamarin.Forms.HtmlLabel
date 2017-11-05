@@ -6,6 +6,15 @@ The Html Label supports adding HtmlText with the small list of supported feature
 
 In the Test Appplication you can check the support of the Tags because there are only small Feeaturelist.
 
+Build State: ![build state](https://mareks.visualstudio.com/_apis/public/build/definitions/4cba069a-f2a2-45d6-814e-94f3e573b3ac/18/badge "build state")
+
+**NuGet** 
+
+The Control is available as NuGet Package MWX.XamForms.HtmlLabel here https://www.nuget.org/packages/MWX.XamForms.HtmlLabel/
+
+Released: [![NuGet Badge](https://buildstats.info/nuget/MWX.XamForms.HtmlLabel)](https://www.nuget.org/packages/MWX.XamForms.HtmlLabel/)
+
+
 ## Html-Label Properties
 
 ### HtmlText (string)
@@ -14,10 +23,20 @@ HtmlText to Display
 ### IgnoreNewlines (bool)
 configures if newlines in the HTML-Text should stay there or not (default true -> ignore them).
 
+## XAML Usage
+
+simply add the XmlNamespace
+```xaml
+  xmlns:html="clr-namespace:MWX.XamForms.Controls;assembly=MWX.XamForms.HtmlLabel"
+```
+and then use it like a normal Label.
+```xaml
+  <html:HtmlLabel HtmlText="{Binding Text, Source={x:Reference htmlInput}}" />
+```
 
 ##Screenshots
-![alt text](images/TestAppDroid.png "Android TestApp")
-![alt text](images/TestAppUWP.png "UWP TestApp")
+![Android TestApp](images/TestAppDroid.png "Android TestApp")
+![UWP TestApp](Images/TestAppUWP.png "UWP TestApp")
 
 ## Supported Html-Tags
 
