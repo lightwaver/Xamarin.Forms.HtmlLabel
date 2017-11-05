@@ -35,9 +35,9 @@ and then use it like a normal Label.
 ```
 
 ## Screenshots
-| Android | Windows |
-| --- | --- |
-| ![Android TestApp](Images/TestAppDroid.png "Android TestApp") | ![UWP TestApp](Images/TestAppUWP.png "UWP TestApp") |
+| Android | Windows | iOS |
+| --- | --- | --- |
+| ![Android TestApp](Images/TestAppDroid.png "Android TestApp") | ![UWP TestApp](Images/TestAppUWP.png "UWP TestApp") | ![iOS TestApp](Images/TestAppiOS.png "iOS TestApp")
 
 ## Supported Html-Tags
 
