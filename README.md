@@ -34,9 +34,10 @@ and then use it like a normal Label.
   <html:HtmlLabel HtmlText="{Binding Text, Source={x:Reference htmlInput}}" />
 ```
 
-##Screenshots
-![Android TestApp](Images/TestAppDroid.png "Android TestApp")
-![UWP TestApp](Images/TestAppUWP.png "UWP TestApp")
+## Screenshots
+| Android | Windows |
+| --- | --- |
+| ![Android TestApp](Images/TestAppDroid.png "Android TestApp") | ![UWP TestApp](Images/TestAppUWP.png "UWP TestApp") |
 
 ## Supported Html-Tags
 
