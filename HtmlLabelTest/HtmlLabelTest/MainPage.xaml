@@ -17,8 +17,8 @@
                 <Editor x:Name="htmlInput" />
             </Frame>
             <Label Text="HtmlLabel-Output" Grid.Row="2" FontSize="Large" VerticalTextAlignment="End"  />
-            <Frame Grid.Row="3" OutlineColor="gray" Padding="10" Margin="0">
-                <html:HtmlLabel x:Name="htmlLabel" HtmlText="{Binding Text, Source={x:Reference htmlInput}}" />
+            <Frame Grid.Row="3" OutlineColor="gray" Padding="10" Margin="0" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+                <html:HtmlLabel x:Name="htmlLabel" HtmlText="{Binding Text, Source={x:Reference htmlInput}}" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"/>
             </Frame>
         </Grid>
     </ContentPage.Content>

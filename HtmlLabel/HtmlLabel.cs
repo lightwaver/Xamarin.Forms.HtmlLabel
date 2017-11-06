@@ -9,7 +9,7 @@ namespace MWX.XamForms.Controls
 {
     public class HtmlLabel : Label
     {
-        public static BindableProperty HtmlTextProperty = BindableProperty.Create(nameof(HtmlText), typeof(string), typeof(HtmlLabel), propertyChanged: HtmlTextPropertyChanged, defaultValue: "");
+        public static BindableProperty HtmlTextProperty = BindableProperty.Create(nameof(HtmlText), typeof(string), typeof(HtmlLabel), defaultBindingMode: BindingMode.OneWay, propertyChanged: HtmlTextPropertyChanged, defaultValue: "");
 
         static void HtmlTextPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -29,7 +29,7 @@ namespace MWX.XamForms.Controls
             set { SetValue(HtmlTextProperty, value); }
         }
 
-        public static BindableProperty IgnoreNewLineProperty = BindableProperty.Create(nameof(IgnoreNewLine), typeof(bool), typeof(HtmlLabel), propertyChanged: IgnoreNewLinePropertyChanged, defaultValue:true);
+        public static BindableProperty IgnoreNewLineProperty = BindableProperty.Create(nameof(IgnoreNewLine), typeof(bool), typeof(HtmlLabel), defaultBindingMode: BindingMode.OneWay, propertyChanged: IgnoreNewLinePropertyChanged, defaultValue:true);
 
         static void IgnoreNewLinePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
