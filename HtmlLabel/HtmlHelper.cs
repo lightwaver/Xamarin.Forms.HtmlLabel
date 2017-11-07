@@ -8,8 +8,19 @@ using Xamarin.Forms;
 
 namespace MWX.XamForms.Controls
 {
+    /// <summary>
+    /// Helperclass to convert html-text to a FormattedString
+    /// </summary>
     public class HtmlHelper
     {
+        /// <summary>
+        /// Helpermethod to convert a html-string to a FormattedString.
+        /// In case of a parsingerror it shows a red text with the parsing-error.
+        /// </summary>
+        /// <param name="html">html-string to convert</param>
+        /// <param name="ignoreNewLines">configures if newline characters should be ignored</param>
+        /// <param name="l">a Label to get the default parameters (font, colors, ...)</param>
+        /// <returns>a converted FormattedString</returns>
         public static FormattedString Html2LabelSpans(string html, bool ignoreNewLines = true, Label l = null)
         {
             FormattedString fstring = new FormattedString();

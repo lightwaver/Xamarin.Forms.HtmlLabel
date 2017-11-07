@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MWX.XamForms.HtmlLabel</id>
+    <version>$version$</version>
+    <title>MWX.XamForms.HtmlLabel</title>
+    <authors>Marekworks.at - Stefan M. Marek</authors>
+    <owners>Marekworks.at - Stefan M. Marek</owners>
+    <licenseUrl>https://github.com/lightwaver/Xamarin.Forms.HtmlLabel/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/lightwaver/Xamarin.Forms.HtmlLabel</projectUrl>
+    <iconUrl>http://marekworks.at/images/logo_marekworks_64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>shows simple html text in a Xamarin.Forms Label</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Xamarin Forms Label Html</tags>
+    <dependencies>
+      <dependency id="Xamarin.Forms" version="2.4.0.280" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="HtmlLabel\bin\Release\MWX.XamForms.HtmlLabel.dll" target="lib/portable45-net45+win8+wpa81" />
+    <file src="HtmlLabel.Std\bin\Release\MWX.XamForms.Controls.Std.dll" target="lib/netstandard1.0" />
+  </files>
+</package>

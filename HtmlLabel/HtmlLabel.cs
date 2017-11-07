@@ -26,7 +26,8 @@ namespace MWX.XamForms.Controls
         }
 
         /// <summary>
-        /// HtmlText from Google AdMob
+        /// Html-Text that should be displayed in the Label
+        /// In case of a parsingerror it shows a red text with the parsing-error.
         /// </summary>
         public string HtmlText
         {
@@ -46,7 +47,7 @@ namespace MWX.XamForms.Controls
         }
 
         /// <summary>
-        /// IgnoreNewLine from Google AdMob
+        /// Configures if Newline Characters should be ignored in the html text (default true)
         /// </summary>
         public bool IgnoreNewLine
         {
