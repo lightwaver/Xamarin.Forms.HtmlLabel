@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
     <RootNamespace>MWX.XamForms.Controls</RootNamespace>
@@ -11,16 +10,15 @@
     <PackageProjectUrl>https://github.com/lightwaver/Xamarin.Forms.HtmlLabel</PackageProjectUrl>
     <PackageIconUrl>http://marekworks.at/images/logo_marekworks_64x64.png</PackageIconUrl>
     <PackageTags>Xamarin Forms Label Html .net Standard</PackageTags>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.2</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\HtmlLabel\HtmlHelper.cs" Link="HtmlHelper.cs" />
     <Compile Include="..\HtmlLabel\HtmlLabel.cs" Link="HtmlLabel.cs" />
   </ItemGroup>
-
   <ItemGroup>
+    <PackageReference Include="MSBuildTasks" Version="1.5.0.235" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.280" />
   </ItemGroup>
-
 </Project>
