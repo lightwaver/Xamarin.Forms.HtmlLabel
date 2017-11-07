@@ -12,13 +12,22 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Label Text="HtmlText-Input" Grid.Row="0" FontSize="Large" VerticalTextAlignment="End" />
+            <Label Grid.Row="0" FontSize="Large" VerticalTextAlignment="End" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span FontAttributes="Bold" >HtmlText</Span>
+                            <Span ForegroundColor="Green">Input</Span>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             <Frame Grid.Row="1" OutlineColor="gray" Padding="10" Margin="0">
                 <Editor x:Name="htmlInput" />
             </Frame>
             <Label Text="HtmlLabel-Output" Grid.Row="2" FontSize="Large" VerticalTextAlignment="End"  />
             <Frame Grid.Row="3" OutlineColor="gray" Padding="10" Margin="0" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
-                <html:HtmlLabel x:Name="htmlLabel" HtmlText="{Binding Text, Source={x:Reference htmlInput}}" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap"/>
+                <html:HtmlLabel x:Name="htmlLabel" HtmlText="{Binding Text, Source={x:Reference htmlInput}}" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" />
             </Frame>
         </Grid>
     </ContentPage.Content>

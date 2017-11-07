@@ -20,7 +20,7 @@ and
 <br/>some newlines <br/>
 <b>bold <i>italic text </i></b>
 <br/>
-<span style='color:#00AA00;font-weight:bold;background-color:#ff0000'>green Text on red Background (except on UWP)</span><br/>
+<span style='color:#00AA00;font-weight:bold;background-color:#ff0000'>green Text on red Background</span><br/>
 ";
         }
     }

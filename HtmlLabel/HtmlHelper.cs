@@ -10,7 +10,7 @@ namespace MWX.XamForms.Controls
 {
     public class HtmlHelper
     {
-        public static FormattedString Html2LabelSpans(string html, bool ignoreNewLines = true)
+        public static FormattedString Html2LabelSpans(string html, bool ignoreNewLines = true, Label l = null)
         {
             FormattedString fstring = new FormattedString();
             try
@@ -19,7 +19,7 @@ namespace MWX.XamForms.Controls
 
                 XElement root = XElement.Parse(xml);
 
-                ProcessNodes(fstring, root, new StyleContainer(), ignoreNewLines);
+                ProcessNodes(fstring, root, new StyleContainer(l), ignoreNewLines, l);
 
             }
             catch (Exception ex)
@@ -34,7 +34,7 @@ namespace MWX.XamForms.Controls
             return fstring;
         }
 
-        private static void ProcessNodes(FormattedString fstring, XElement xe, StyleContainer cont, bool ignoreNewLines)
+        private static void ProcessNodes(FormattedString fstring, XElement xe, StyleContainer cont, bool ignoreNewLines, Label l)
         {
             foreach (var node in xe.Nodes())
             {
@@ -46,21 +46,21 @@ namespace MWX.XamForms.Controls
                         {
                             var boldCont = cont.Clone();
                             ProcessStyles(element, boldCont);
-                            ProcessNodes(fstring, element, boldCont, ignoreNewLines);
+                            ProcessNodes(fstring, element, boldCont, ignoreNewLines, l);
                         }
                         else if (element.Name.LocalName.ToLower() == "b")
                         {
                             var boldCont = cont.Clone();
                             boldCont.FontAttributes |= FontAttributes.Bold;
                             ProcessStyles(element, boldCont);
-                            ProcessNodes(fstring, element, boldCont, ignoreNewLines);
+                            ProcessNodes(fstring, element, boldCont, ignoreNewLines, l);
                         }
                         else if (element.Name.LocalName.ToLower() == "i")
                         {
                             var boldCont = cont.Clone();
                             ProcessStyles(element, boldCont);
                             boldCont.FontAttributes |= FontAttributes.Italic;
-                            ProcessNodes(fstring, element, boldCont, ignoreNewLines);
+                            ProcessNodes(fstring, element, boldCont, ignoreNewLines, l);
                         }
                         else if (element.Name.LocalName.ToLower() == "br")
                         {
@@ -145,6 +145,7 @@ namespace MWX.XamForms.Controls
             //public Font Font { get; set; }
             public Color ForegroundColor { get; set; }
             public FontAttributes FontAttributes { get; set; }
+            //public Font Font { get; private set; }
             public string FontFamily { get; set; }
             public double FontSize { get; set; }
 
@@ -172,6 +173,20 @@ namespace MWX.XamForms.Controls
                     FontFamily = this.FontFamily,
                     FontSize = this.FontSize
                 };
+            }
+
+            public StyleContainer()
+            {
+
+            }
+
+            public StyleContainer(Label l)
+            {
+                this.BackgroundColor = l.BackgroundColor;
+                this.ForegroundColor = l.TextColor;
+                this.FontAttributes = l.FontAttributes;
+                this.FontFamily = l.FontFamily;
+                this.FontSize = l.FontSize;
             }
         }
     }

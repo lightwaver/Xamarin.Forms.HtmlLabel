@@ -16,8 +16,13 @@ namespace MWX.XamForms.Controls
             var instance = bindable as HtmlLabel;
             if (instance != null)
             {
-                instance.FormattedText = HtmlHelper.Html2LabelSpans(Convert.ToString(newValue), instance.IgnoreNewLine);
+                instance.setHtml();
             }
+        }
+
+        private void setHtml()
+        {
+            this.FormattedText = HtmlHelper.Html2LabelSpans(HtmlText, IgnoreNewLine, this);
         }
 
         /// <summary>
@@ -36,7 +41,7 @@ namespace MWX.XamForms.Controls
             var instance = bindable as HtmlLabel;
             if (instance != null)
             {
-                instance.FormattedText = HtmlHelper.Html2LabelSpans(instance.HtmlText, Convert.ToBoolean(newValue));
+                instance.setHtml();                
             }
         }
 
