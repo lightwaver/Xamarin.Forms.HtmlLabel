@@ -12,6 +12,8 @@
     <PackageTags>Xamarin Forms Label Html .net Standard</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.0.2</Version>
+    <Product>MWX.XamForms.HtmlLabel.Std</Product>
+    <PackageId>MWX.XamForms.HtmlLabel.Std</PackageId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\HtmlLabel\HtmlHelper.cs" Link="HtmlHelper.cs" />
